@@ -1,10 +1,21 @@
 import React from 'react';
 import logo from './logo.svg';
+import { connect } from "react-redux";
+import actions from "./store/actions/counter";
+import { Store} from './store/reducers/index.interface'
 import './App.css';
+import { Button } from 'antd-mobile';
 
-const App: React.FC = () => {
-  return (
-    <div className="App">
+
+interface IProps{
+  number:number,
+}
+class App extends React.Component<IProps> {
+  render() {
+    console.log('props', this.props)
+    return(
+      <div className="App">
+      <Button type="warning">warning</Button>
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
@@ -20,7 +31,15 @@ const App: React.FC = () => {
         </a>
       </header>
     </div>
-  );
+    )
+  }
+}
+let mapStateToProps = function (state:Store) {
+  return state
 }
 
-export default App;
+export default connect(
+  mapStateToProps,
+  actions
+)(App);
+
