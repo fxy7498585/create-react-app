@@ -1,10 +1,9 @@
-import { createStore , Store, applyMiddleware} from 'redux';
-import { combineReducers } from "redux";
-import reducers from './reducers/index';
+import { createStore, applyMiddleware} from 'redux';
+import reducers from './allReducers';
 import thunk from "redux-thunk";
 // 引入日志
 import logger from "redux-logger";
 
-let store = createStore(reducers);
+const store = createStore(reducers, applyMiddleware(thunk, logger));
 
 export default store;

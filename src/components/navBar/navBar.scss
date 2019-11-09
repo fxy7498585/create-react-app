@@ -1,0 +1,13 @@
+@mixin single-menu-active() {
+
+
+  .am-navbar-light {
+    background-color: #008AE6!important;
+    color: #FFF!important;
+  }
+  .am-navbar-title {
+    color: #FFF!important;
+  }
+}
+
+@include single-menu-active();

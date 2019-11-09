@@ -1,0 +1,7 @@
+@mixin  mobile_index() {
+  .mobile_index {
+    color: red;
+  }
+}
+
+@include mobile_index();
