@@ -8,8 +8,6 @@ import 'antd-mobile/dist/antd-mobile.css';
 
 import store from './store/index'
 
-
-
 ReactDOM.render(
   (
     <Provider store={store}>

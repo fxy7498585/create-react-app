@@ -12,7 +12,6 @@ interface IProps{
 }
 class App extends React.Component<IProps> {
   public render() {
-    console.log('props', this.props)
     return(
       <Router />
     )
