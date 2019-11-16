@@ -2,7 +2,8 @@ import React from 'react';
 import { connect } from "react-redux";
 import { Dispatch, bindActionCreators } from 'redux';
 import { withRouter } from 'react-router';
-// import fetch from 'fetch';
+import axios from 'axios';
+import fetch from '../../util/axios/axios'
 
 import './index.scss';
 import allActions from '../../store/allActions';
@@ -42,13 +43,31 @@ class Index extends React.Component {
     )
   }
 
-  public componentDidMount() { 
-    const key = '0d9775d27cb42a402768dff0e6ce33d2';
-    return '';
-  }
+  public componentDidMount() { }
 
-  public getLocation = () => {
-    return '';
+  public getLocation = async () => {
+    const key = '778490c1c9526f65dd311fad82e18e03';
+    const ip = '192.168.16.66';
+    // axios.get(`https://restapi.amap.com/v3/ip?key=${key}&output=JSON`)
+    // .then((res) => {
+    //   console.log(res);
+    //   alert(res.data.city);
+    // })
+    // axios.get(`https://restapi.amap.com/v3/ip`, {
+    //   params: {
+    //     key
+    //   }
+    // })
+
+    const data = await fetch({
+      method: 'get',
+      url: 'https://restapi.amap.com/v3/ip',
+      data: {
+        key,
+      }
+    })
+
+    console.log(data)
   }
 
   // 检测是否支持地理定位
